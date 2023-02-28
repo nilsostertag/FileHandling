@@ -1,21 +1,24 @@
-import XLSX from 'xlsx';
+//import xlsx lib
 
+
+//create sheet selection
 function handleSheets(workbook) {
     let i = 0;
-    const sheetNames = document.createElement('div');
+    const sheetNames = document.createElement('select');
     sheetNames.className = 'sheetNames';
     workbook.SheetNames.forEach(element => {
-        const sheetName = document.createElement('div');
-        sheetName.className = SheetNames[i];
-        sheetName.innerText = SheetNames[i];
+        var option = document.createElement('option');
+        option.value = SheetNames[i];
+        option.text = SheetNames[i];
         
         sheetNames.appendChild(sheetName);
-        workspace.appendChild(sheetNames);
 
         i++;
     });
+    workspace.appendChild(sheetNames);
 }
 
+//processing excel file
 function processExcelFile(file) {
     const reader = new FileReader();
     reader.onload = (e) => {
