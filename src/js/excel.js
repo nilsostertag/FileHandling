@@ -11,7 +11,7 @@ function handleSheets(workbook) {
         option.value = SheetNames[i];
         option.text = SheetNames[i];
         
-        sheetNames.appendChild(sheetName);
+        sheetNames.appendChild(option);
 
         i++;
     });
